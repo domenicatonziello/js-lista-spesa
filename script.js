@@ -7,7 +7,8 @@ const shoppingList = ['acqua', 'pane', 'pomodori', 'latte'];
 const result = document.getElementById('result');
 
 // Preparo lista
-let myList = '<ul>'
+// let myList = '<ul>'
+const myList = document.createElement('ul');
 
 
 //* CICLO WHILE
@@ -15,10 +16,14 @@ let myList = '<ul>'
 let i= 0;
 
 while (i < shoppingList.length){
-    myList += `<li> ${shoppingList[i]} </li>`;
+    // myList += `<li> ${shoppingList[i]} </li>`;
+    const elementList = document.createElement('li');
+    elementList.append(shoppingList[i]);
+    myList.appendChild(elementList);    
     i++
 }
 
-myList += '</ul>'
-
-result.innerHTML = myList;
+// myList += '</ul>'
+// STAMPO IN PAGINA
+// result.innerHTML = myList;
+result.appendChild(myList);
